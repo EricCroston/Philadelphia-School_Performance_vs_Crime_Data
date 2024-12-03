@@ -234,7 +234,8 @@ SELECT
         si."district_psa", 
         AVG(ks."pssa_ela_percent_students_proficient_or_advanced_grades_3_to_8") AS "average_ela_proficiency", 
     AVG(ks."pssa_math_percent_students_proficient_or_advanced_grades_3_to_8") AS "average_math_proficiency", 
-        AVG(ks."percent_students_attending_at_least_90_percent") AS "average_percent_attending_90"
+        AVG(ks."percent_students_attending_at_least_90_percent") AS "average_percent_attending_90", 
+        b."total_crimes"
 FROM 
         "School_Info" si
 JOIN
@@ -266,7 +267,8 @@ SELECT
         si."district_psa", 
         AVG(es."pssa_ela_percent_students_proficient_or_advanced_grades_3_to_8") AS "average_ela_proficiency", 
         AVG(es."pssa_math_percent_students_proficient_or_advanced_grades_3_to_8") AS "average_math_proficiency", 
-        AVG(es."percent_students_attending_at_least_90_percent") AS "average_percent_attending_90"
+        AVG(es."percent_students_attending_at_least_90_percent") AS "average_percent_attending_90", 
+        b. "total_crimes"
 FROM 
         "School_Info" si
 JOIN
