@@ -156,7 +156,7 @@ function addCSVMarkers(data) {
 }
 
 // Fetch the CSV file and add markers to the map
-fetch('data/new_geo_schools_df.csv')
+fetch('Data_Cleanup_Outputs/School_Info.csv')
     .then(response => response.text())
     .then(addCSVMarkers)
     .catch(error => console.error('Error loading the CSV data:', error));
@@ -215,17 +215,17 @@ legend.onAdd = function (map) {
 legend.addTo(map);
 
 // Plot for Crime Trends Over Time by Category
-d3.csv("data/crime_group_by_date.csv").then(function(data) {
+d3.csv("SQL_Outputs/crime_group_by_date.csv").then(function(data) {
     let traces = [];
-    let categories = new Set(data.map(d => d.Crime_Group));
+    let categories = new Set(data.map(d => d.crime_group));
     categories.forEach(category => {
-        let filteredData = data.filter(d => d.Crime_Group === category);
+        let filteredData = data.filter(d => d.crime_group === category);
         let trace = {
             type: "scatter",
             mode: "lines+markers",
             name: category,
-            x: filteredData.map(d => d.Dispatch_Date),
-            y: filteredData.map(d => +d.Frequency),
+            x: filteredData.map(d => d.dispatch_date),
+            y: filteredData.map(d => +d.frequency),
             line: { shape: 'spline' }
         };
         traces.push(trace);
@@ -265,10 +265,10 @@ d3.csv("data/crime_group_by_date.csv").then(function(data) {
 });
 
 // Plot for High School Metrics
-d3.csv("data/Total_Crimes_HS_PSA.csv").then(function(data) {
-    let xData = data.map(d => +d.Total_Crimes);
-    let yDataAttendance = data.map(d => +d.Average_Percent_Attending_90);
-    let yDataProficiency = data.map(d => +d.Average_Percent_Proficient_All_Keystones);
+d3.csv("SQL_Outputs/Total_Crimes_HS_PSA.csv").then(function(data) {
+    let xData = data.map(d => +d.total_crimes);
+    let yDataAttendance = data.map(d => +d.average_percent_attending_90);
+    let yDataProficiency = data.map(d => +d.average_percent_proficient_all_keystones);
     
     var data = [
         {x: xData, y: yDataAttendance, mode: 'markers', type: 'scatter', name: 'Attendance vs. Crimes', marker: { size: 12 }},
@@ -286,12 +286,12 @@ d3.csv("data/Total_Crimes_HS_PSA.csv").then(function(data) {
 });
 
 // Plot for Elementary School Metrics
-d3.csv("data/Total_Crimes_ES_PSA.csv").then(function(data) {
-    let xData = data.map(d => +d.Total_Crimes);
+d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
+    let xData = data.map(d => +d.total_crimes);
     let yData = [
-        {data: data.map(d => +d.Average_Percent_Attending_90), name: 'Attendance' },
-        {data: data.map(d => +d.Average_ELA_Proficiency_3_to_8), name: 'ELA Proficiency' },
-        {data: data.map(d => +d.Average_Math_Proficiency_3_to_8), name: 'Math Proficiency'}
+        {data: data.map(d => +d.average_percent_attending_90), name: 'Attendance' },
+        {data: data.map(d => +d.average_ela_proficiency), name: 'ELA Proficiency' },
+        {data: data.map(d => +d.average_math_proficiency), name: 'Math Proficiency'}
     ];
 
     var traces = yData.map(metric => ({
@@ -314,12 +314,12 @@ d3.csv("data/Total_Crimes_ES_PSA.csv").then(function(data) {
 });
 
 // Plot for Total Crimes and School Scores by PSA
-d3.csv("data/Total_Crimes_ES_PSA.csv").then(function(data) {
-    let psaNumbers = data.map(row => String(row.District_PSA)); // Convert to string
-    let totalCrimes = data.map(row => +row.Total_Crimes);
-    let attendanceRates = data.map(row => +row.Average_Percent_Attending_90);
-    let elaProficiency = data.map(row => +row.Average_ELA_Proficiency_3_to_8);
-    let mathProficiency = data.map(row => +row.Average_Math_Proficiency_3_to_8);
+d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
+    let psaNumbers = data.map(row => String(row.district_psa)); // Convert to string
+    let totalCrimes = data.map(row => +row.total_crimes);
+    let attendanceRates = data.map(row => +row.average_percent_attending_90);
+    let elaProficiency = data.map(row => +row.average_ela_proficiency);
+    let mathProficiency = data.map(row => +row.average_math_proficiency);
 
     let trace2 = {
         x: psaNumbers,
