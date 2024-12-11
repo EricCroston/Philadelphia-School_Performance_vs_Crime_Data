@@ -374,12 +374,12 @@ d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
             type: 'category' // Treat x-axis as categorical values
         },
         yaxis: {
-            title: 'Total Crimes',
+            title: 'School Metrics Percentage',
             side: 'left',
             overlaying: 'y2'  // Overlay with y2 axis
         },
         yaxis2: {
-            title: 'School Metrics Percentage',
+            title: 'Total Crimes',
             side: 'right',
         },
         legend: {
