@@ -3,7 +3,7 @@
 ## Project Overview
 This project explores potential correlations between crime incidents in Philadelphia during the year 2024 and school performance metrics from the previous year, 2023. It aims to understand how crime rates might influence educational outcomes across different Police Service Areas (PSAs) in the city.
 
-https://elizabethvandergrift.github.io/Philadelphia-CrimeData_and_SchoolMetrics/
+https://ericcroston.github.io/Philadelphia-School_Performance_vs_Crime_Data/
 
 ## Table of Contents
 - **[data](./data)**: Data files used in the project, including cleaned and raw datasets.
