@@ -389,9 +389,9 @@ d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
         },
         autosize: true,
         legend: {
-            x: 1.1,
+            x: 1.2,
             xanchor: 'right',
-            y: 1
+            y: 1.1
         },
         traceorder: 'normal' // Ensure that later traces are on top
     };
