@@ -233,7 +233,6 @@ d3.csv("SQL_Outputs/crime_group_by_date.csv").then(function(data) {
 
     var layout = {
         title: 'Crime Trends Over Time by Category',
-        width:1300,
         xaxis: {
             autorange: true,
             type: 'date',
@@ -258,8 +257,11 @@ d3.csv("SQL_Outputs/crime_group_by_date.csv").then(function(data) {
             rangeslider: { range: ['2024-01-01', '2024-7-31'] },
             tickformat: '%b %Y'
         },
-        yaxis: {autorange: true, type: 'linear', title: 'Frequency of Crimes'}
+        yaxis: {autorange: true, type: 'linear', title: 'Frequency of Crimes'},
+        autosize: true
     };
+
+    var config = {response: true};
 
     Plotly.newPlot('crimeTrendsDiv', traces, layout);
 });
@@ -277,10 +279,12 @@ d3.csv("SQL_Outputs/Total_Crimes_HS_PSA.csv").then(function(data) {
 
     var layout = {
         title: 'PSA Crime Impact on High School Metrics',
-        width: 1300,
         xaxis: {title: 'Total Crimes in PSA'},
-        yaxis: {title: 'School Metrics Percentage'}
+        yaxis: {title: 'School Metrics Percentage'},
+        autosize: true
     };
+
+    var config = {response: true};
 
     Plotly.newPlot('hsMetricsDiv', data, layout);
 });
@@ -307,7 +311,7 @@ d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
         title: 'PSA Crime Impact on Elementary School Metrics',
         xaxis: {title: 'Total Crimes in PSA'},
         yaxis: {title: 'School Metrics Percentage'},
-        autosize:true
+        autosize: true
     };
 
     var config = {response: true};
@@ -369,7 +373,6 @@ d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
 
     let layout = {
         title: 'Total Crimes and Elementary School Scores by PSA',
-        width: 1200,
         barmode: 'group',
         xaxis: { 
             title: 'PSA Number',
@@ -384,6 +387,7 @@ d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
             title: 'Total Crimes',
             side: 'right',
         },
+        autosize: true,
         legend: {
             x: 1,
             xanchor: 'right',
@@ -391,6 +395,8 @@ d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
         },
         traceorder: 'normal' // Ensure that later traces are on top
     };
+
+    var config = {response: true};
 
     // Ensure Total Crimes is plotted first (in the background) and the other metrics are plotted afterward
     Plotly.newPlot('barGraphDiv', [trace1, trace3, trace4, trace2], layout);

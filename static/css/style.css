@@ -75,7 +75,25 @@ html {
   background: #000;
 }
 
+#crimeTrendsDiv {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+}
+
+#hsMetricsDiv {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+}
+
 #esMetricsDiv {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+}
+
+#barGraphDiv {
     width: 100%;
     height: 100%;
     max-width: 1400px;
