@@ -178,7 +178,7 @@ fetch('data/Boundaries_PSA.geojson')
     .catch(error => console.error('Error loading the GeoJSON data:', error));
 
 // Add the layers to the map in the desired order
-zipcodesLayer.addTo(map);
+// zipcodesLayer.addTo(map);
 schoolsLayer.addTo(map);
 crimeIncidentsLayer.addTo(map);
 policeStationsLayer.addTo(map);
@@ -389,7 +389,7 @@ d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
         },
         autosize: true,
         legend: {
-            x: 1,
+            x: 1.1,
             xanchor: 'right',
             y: 1
         },
