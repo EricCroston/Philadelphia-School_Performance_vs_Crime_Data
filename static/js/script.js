@@ -305,10 +305,12 @@ d3.csv("SQL_Outputs/Total_Crimes_ES_PSA.csv").then(function(data) {
 
     var layout = {
         title: 'PSA Crime Impact on Elementary School Metrics',
-        width: 1300,
         xaxis: {title: 'Total Crimes in PSA'},
-        yaxis: {title: 'School Metrics Percentage'}
+        yaxis: {title: 'School Metrics Percentage'},
+        autosize:true
     };
+
+    var config = {response: true};
 
     Plotly.newPlot('esMetricsDiv', traces, layout);
 });
