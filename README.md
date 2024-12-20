@@ -81,11 +81,21 @@ Performance metrics for Philadelphia schools for the school year 2022-2023.
 ## Technologies Used
 - **Python**, **Plotly**, **D3.js**, **Pandas**, and **SQL Database**.
 
-## Contributing
-There were three contributors for this project: 
-Juan Camilo Bohorquez Rozo, 
-Eric Croston, 
-Elizabeth Vandergrift
+## Contributions  
+This project was a collaborative effort, and I want to acknowledge the work of my fellow collaborators:
+
+- **[Juan Camilo Bohorquez Rozo](https://github.com/RCamilo12):**  
+  Led the frontend design and user experience, creating an interactive dashboard using JavaScript. The dashboard features interactive charts and a map to visualize the data.  
+  **Key files:** `script.js`, `style.css`, `index.html`  
+
+- **[Elizabeth Vandergrift](https://github.com/ElizabethVandergrift):**  
+  Handled data processing, cleaning, and integration, as well as database queries.  
+  **Key files:** `Police_and_Incidents_Clean_up and Correlation Analysis.ipynb`, `Queries for phila_resources sql database.sql`  
+
+- **[Eric Croston](https://github.com/EricCroston):**  
+  Focused on data processing, cleaning, integration, and building the database schema.  
+  **Key files:** `School_Metrics_Cleanup.ipynb`, `Schema-Philly-School_vs_Crime.sql`  
+
 
 ## Acknowledgments for Data Sources
 - Philadelphia Police Department
