@@ -96,6 +96,12 @@ This project was a collaborative effort, and I want to acknowledge the work of m
   Focused on data processing, cleaning, integration, and building the database schema.  
   **Key files:** `School_Metrics_Cleanup.ipynb`, `Schema-Philly-School_vs_Crime.sql`  
 
+### Refinements to [Original](https://github.com/ElizabethVandergrift/Philadelphia-CrimeData_and_SchoolMetrics) Group Project  
+In addition to my contributions to data processing, cleaning, and database schema development, I refined collaborators' work to ensure consistency and functionality across the project. This included:  
+- Reviewing and editing frontend components (`script.js`, `style.css`, `index.html`)  
+- Verifying data integration workflows  
+- Enhancing database functionality for efficiency and scalability
+- Implementing a consistent file naming schema for clarity and organization
 
 ## Acknowledgments for Data Sources
 - Philadelphia Police Department
